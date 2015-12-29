@@ -1,0 +1,6 @@
+# Configuration for testing
+
+^test:
+  database:
+
+    mongo: localhost/fontello-test

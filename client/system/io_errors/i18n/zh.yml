@@ -1,0 +1,5 @@
+zh-CN:
+  system_error: '错误 #{code}'
+  invalid_csrf_token: 安全令牌过期. 请重试.
+  application_fuckup: 应用程序错误，请稍后重试.
+  communication_timeout: 连接错误，请稍后重试.

@@ -1,0 +1,14 @@
+zh-CN:
+  title: 字形选项
+
+  fieldset_defaults: 默认值
+  css_name: 默认(css)名称
+  hex_code: 默认代码(hex)
+
+  fieldset_search: 搜索
+  keywords: 关键字
+
+  btn_save: 保存字形
+  btn_delete: 删除字形
+
+  confirm_delete: '你确定?'

@@ -1,0 +1,29 @@
+zh-CN:
+  err_invalid_browser: >
+    您的浏览器不支持这个操作， 请
+    <a href="http://www.mozilla.org/firefox/new/">更新</a>
+    更新到更新的版本.
+
+  err_no_files_chosen: 你必须选择一个文件.
+  err_bad_config_format: "不能识别config文件 '#{name}'"
+  err_bad_zip_format: "不能解压 '#{name}'"
+  err_unknown_format: "不能导入 '#{name}' - 未知格式"
+
+  err_need_svg_font: >
+    我们不支持导入TTF、WOFF和OTF字体。
+    请先将其转换为SVG格式， 您可以采用
+    <a href="http://fontforge.org" target="_blank">FontForge</a>转换,
+    示例请见 
+    <a href="https://github.com/fontello/fontello/wiki/How-to-use-custom-images" target="_blank">帮助</a>
+
+  err_invalid_format: 不正确的格式.
+
+  err_skiped_tags: >
+    如果字形不是期望的请手动转换为
+    <strong><a href="https://github.com/fontello/fontello/wiki/How-to-use-custom-images#importing-svg-images" target="_blank">复合路径</a></strong>
+    <br><br>
+    去除标签和属性: #{skipped}
+
+  err_merge_path: >
+    如果字形不是期望的，请手动转换为
+    <strong><a href="https://github.com/fontello/fontello/wiki/How-to-use-custom-images#importing-svg-images" target="_blank">复合路径</a></strong>.

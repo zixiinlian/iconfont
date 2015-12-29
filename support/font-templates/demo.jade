@@ -1,0 +1,289 @@
+doctype html
+html
+  head
+    <!--[if lt IE 9]><script language="javascript" type="text/javascript" src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    meta(charset='UTF-8')
+
+    != '<style>'
+    :stylus
+      @import "bootstrap"
+
+      body
+        margin-top 90px
+
+      .header
+        position fixed
+        top: 0
+        left 50%
+        margin-left -480px
+        background-color #fff
+        border-bottom 1px solid #ddd
+        padding-top 10px
+        z-index 10
+
+      .footer
+        color #ddd
+        font-size 12px
+        text-align center
+        margin-top 20px
+        a
+          color #ccc
+          text-decoration underline
+
+      .i-name, .i-code
+        font-size 15px
+
+      .the-icons
+        font-size 24px
+        line-height 24px
+
+      .switch
+        position absolute
+        right 0
+        bottom 10px
+        color #666
+        input
+          margin-right .3em
+
+      .codesOn
+        .i-name
+          display none
+        .i-code
+          display inline
+      .i-code
+        display none
+
+    - var rnd = Math.floor(Math.random()*100000000);
+    | @font-face {
+    |   font-family: '#{font.fontname}';
+    |   src: url('./font/#{font.fontname}.eot?#{rnd}');
+    |   src: url('./font/#{font.fontname}.eot?#{rnd}#iefix') format('embedded-opentype'),
+    |        url('./font/#{font.fontname}.woff?#{rnd}') format('woff'),
+    |        url('./font/#{font.fontname}.ttf?#{rnd}') format('truetype'),
+    |        url('./font/#{font.fontname}.svg?#{rnd}##{font.fontname}') format('svg');
+    |   font-weight: normal;
+    |   font-style: normal;
+    | }
+    | 
+    | 
+    | .demo-icon
+    | {
+    |   font-family: "#{font.fontname}";
+    |   font-style: normal;
+    |   font-weight: normal;
+    |   speak: none;
+    | 
+    |   display: inline-block;
+    |   text-decoration: inherit;
+    |   width: 1em;
+    |   margin-right: .2em;
+    |   text-align: center;
+    |   /* opacity: .8; */
+    | 
+    |   /* For safety - reset parent styles, that can break glyph codes*/
+    |   font-variant: normal;
+    |   text-transform: none;
+    | 
+    |   /* fix buttons height, for twitter bootstrap */
+    |   line-height: 1em;
+    | 
+    |   /* Animation center compensation - margins should be symmetric */
+    |   /* remove if not needed */
+    |   margin-left: .2em;
+    | 
+    |   /* You can be more comfortable with increased icons size */
+    |   /* font-size: 120%; */
+    | 
+    |   /* Font smoothing. That was taken from TWBS */
+    |   -webkit-font-smoothing: antialiased;
+    |   -moz-osx-font-smoothing: grayscale;
+    | 
+    |   /* Uncomment for 3D effect */
+    |   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+    | }
+    | 
+    | .the-icons a {
+    |   display: block;
+    |   color: #222222;
+    |   line-height: 28px;
+    |   height: 32px;
+    |   border-radius: 2px;
+    |   text-decoration: none;
+    |   cursor: pointer;
+    | }
+    | 
+    | .the-icons a:hover {
+    |   background-color: #eee;
+    |   color: #52b343;
+    | }
+    | legend {
+    |   display: block;
+    |   width: 100%;
+    |   padding: 0;
+    |   margin-bottom: 20px;
+    |   font-size: 21px;
+    |   line-height: inherit;
+    |   color: #444444;
+    |   border: 0;
+    |   border-bottom: 1px solid #e5e5e5;
+    | }
+    | pre {
+    |   margin: 0px;
+    |   text-indent: 0;
+    | }
+    | .icon-info {
+    |   margin-bottom: 30px;
+    | }
+    | .icon-info .demo-icon {
+    |   margin-left: 0px;
+    | }
+    | .hui-icon {
+    |   font-family: "hui-font";
+    |   font-style: normal;
+    |   font-weight: normal;
+    |   display: inline-block;
+    |   margin-right: .2em;
+    | }
+    | .icon-detail, .icon-markup {
+    |   text-indent: 0;
+    |   margin-top: 30px;
+    |   padding: 19px;
+    |   margin-bottom: 20px;
+    |   background-color: #f5f5f5;
+    |   border: 1px solid #e3e3e3;
+    |   border-radius: 4px;
+    |   font-size: 24px;
+    | }
+    | .fs-5 
+    | {
+    |   font-size: 16em;
+    | }
+    | .fs-4 
+    | {
+    |   font-size: 12em;
+    | }
+    | .fs-3 
+    | {
+    |   font-size: 9em;
+    | }
+    | .fs-2 
+    | {
+    |   font-size: 6em;
+    | }
+    | .fs-1 
+    | {
+    |   font-size: 4em;
+    | }
+    | 
+
+    != '</style>'
+
+    //- link(rel='stylesheet', href='css/#{font.fontname}.css')
+    link(rel='stylesheet', href='css/animation.css')
+    <!--[if IE 7]><link rel="stylesheet" href="css/#{font.fontname}-ie7.css"><![endif]-->
+
+    script.
+      function toggleCodes(on) {
+        var obj = document.getElementById('icons');
+
+        if (on) {
+          obj.className += ' codesOn';
+        } else {
+          obj.className = obj.className.replace(' codesOn', '');
+        }
+      }
+
+  body
+    .container.header
+      h1
+        i(
+          class='demo-icon hui-icon-logo'
+          style='color:#44b336;'
+        ) &#xe806;
+        | HUI Icon Font
+        small A set of icons for Hujiang web applications
+      label.switch
+        input(type='checkbox', onclick='toggleCodes(this.checked)')
+        | show codes
+
+    #icons.container
+      - var col_class = "span" + Math.ceil(12 / meta.columns)
+      - var rows_total = Math.ceil(glyphs.length / meta.columns)
+      - for (var row = 0; row < rows_total; row++)
+
+        .row
+          - for (var col = 0; col < meta.columns && glyphs[row*meta.columns + col]; col++)
+
+            - var g = glyphs[row*meta.columns + col]
+
+            - var css_class = css_name = meta.css_use_suffix ? (g.css || g.file) + meta.css_prefix_text : meta.css_prefix_text + (g.css || g.file)
+
+            - if (g['css-ext']) css_class += ' ' + g['css-ext']
+
+            - var code = g.code.toString(16)
+              .the-icons(class=col_class, title='Code: 0x#{code}')
+                a(
+                  data-icon=css_name
+                  data-code='x' + code
+                )
+                  i(
+                    class='demo-icon'
+                    class=css_class
+                  ) !{'&#x' + code + ';'}
+                  |  
+                  span.i-name #{css_name}
+                  span.i-code 0x#{code}
+
+    .container.footer
+
+    #detail(
+      title="Font Detail" 
+      style="display:none;"
+    )
+
+    link(rel='stylesheet', type='text/css', href='http://res.hjfile.cn/lib/widget/1.2.0/hui.widgets.css')
+
+    script(src="http://res.hjfile.cn/lib/??jq/1.8.3/jquery.min.js,widget/1.2.0/hui.widgets.js",type="text/javascript")
+
+    script(type="text/javascript")
+      | $(function(){
+      |var firstIconCode = $('.the-icons:eq(0)').find('a').attr('data-code');
+      |$('.header .hui-icon-logo')[0].innerHTML = '&#'+firstIconCode;
+
+      |var htmlText =  '<div class="icon-info">' +
+      |                '        <i class="demo-icon \#{0} fs-5">&#\#{1};</i>' +
+      |                '        <i class="demo-icon \#{0} fs-4">&#\#{1};</i>' +
+      |                '        <i class="demo-icon \#{0} fs-3">&#\#{1};</i>' +
+      |                '        <i class="demo-icon \#{0} fs-2">&#\#{1};</i>' +
+      |                '        <i class="demo-icon \#{0} fs-1">&#\#{1};</i>' +
+      |                '      </div>' +
+      |                '      <section>' +
+      |                '        <legend>样式Class及Unicode编码</legend>' +
+      |                '        <div class="icon-detail">' +
+      |                '        类名: \#{0}<br/> Unicode:\#{1};' +
+      |                '        </div>' +
+      |                '        <legend>HTML标记</legend>' +
+      |                '        <div class="icon-markup">' +
+      |                '          <pre><span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"hui-icon"</span><span |class="nt">&gt;&amp;#\#{1};&lt;/i&gt;</span><br><span class="nt">&lt;i</span> <span class="na">class=</span><span |class="s">"hui-icon \#{0}"</span><span class="nt">&gt;&lt;/i&gt;</span></pre>' +
+      |                '        </div>' +
+      |                '      </section>';
+
+      |$("#icons").delegate('a', 'click', function(event) {
+      |   var a = $(event.currentTarget),
+      |       icon = a.attr("data-icon"),
+      |       code = a.attr("data-code"),
+      |       htmlStr;
+
+      |  htmlStr = HUI.util.format(htmlText, icon, code);
+
+      |  $('#detail').empty().html(htmlStr).huiDialog("open");
+      |});
+
+      |$('#detail').huiDialog({
+      |  openOnload:false,
+      |  draggable:true,
+      |  modal:true,
+      |  width: 960
+      |});
+      | });

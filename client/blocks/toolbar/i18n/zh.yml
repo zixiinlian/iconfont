@@ -1,0 +1,31 @@
+zh-CN:
+  download: 下载字体
+  save: 保存会话
+  export: 导出字体
+
+  file_name_placeholder: 字体名称
+  file_name_help: |
+    这个名称也将用于字体文件。
+    采用字母a-z,数字,-或_。 
+
+  search_permalink_help: Permanent link to these search results
+
+  menu_unselect_all: 全部取消
+  menu_reset_all: 全部重置
+  menu_import: 导入
+  menu_import_help: >
+    选择config.json或者整个zip压缩包， 你也可以导入SVG图片和SVG字体。 
+    
+  menu_css_prefix_text: 'CSS 前缀:'
+  menu_css_use_suffix: add after icon name
+
+  menu_advanced_settings: 高级字体设置...
+
+  help_us: >
+    你是设计者吗?
+    <a href="https://github.com/fontello/fontello/wiki/How-to-help"
+        target="_blank">你可以帮助</a>
+    我们改进fontello!
+  build_error: >
+    在处理您的请求时出现了错误:
+    <em>"#{error}"</em>. 请稍后重试.
